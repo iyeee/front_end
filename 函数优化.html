@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        //es6前，设置默认值只能采用变通方法 
+        function add(a,b){
+            // 判断b是否为空，为空就给默认值1
+            b=b||1;
+            return a+b;
+        }
+        console.log(add(10))
+
+        // 默认值
+        function add2(a,b=1){
+            return a+b;
+        }
+        console.log(add2(10))
+
+
+
+        function fun(...values){
+            console.log(values.length)
+        }
+        console.log(fun(1,2,3,4))
+
+
+        //  以前
+        var print=function(obj){
+            console.log(obj);
+        }
+        // 现在
+        var print2=obj=>console.log(obj);
+        print2("hello")
+        print2("hello world")
+
+
+        var sum=(a,b)=>a+b;
+        console.log(sum(111,2))
+
+        var sum2=(a,b)=>{
+            c=a+b;
+            return a+c;
+        }
+        console.log(sum2(111,2));
+
+        
+        const person={
+            name:"jack",
+            age:21,
+            language:['java','js','css']
+        }
+        function hello(person){
+            console.log("hello",person.name)
+        }
+        var hello2=(person)=>console.log("hello",person.name);
+        // 解构
+        var hello3=({name})=>console.log("hello",person.name);
+        hello2(person)
+        hello3(person)
+
+
+
+
+
+    </script>
+</body>
+</html>

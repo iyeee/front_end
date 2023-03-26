@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let arr=[1,2,3];
+        let [a,b,c]=arr;
+        console.log(a,b,c)
+
+
+        const person={
+            name:"jack",
+            age:21,
+            language:['java','js','css']
+        }
+        const {name:xxx,age,language}=person;
+        console.log(xxx,age,language)
+
+        // 字符串拓展
+        let str="hello.vue"
+        console.log(str.startsWith("hello"));
+        console.log(str.endsWith("hello"));
+        console.log(str.includes("hello"));
+        
+
+        // 字符串模板
+        let ss=`<div>
+                <span>hello<span>
+            </div>`;
+        console.log(ss);
+
+        // 字符串插入变量和表达式
+        let info=`我是${xxx},今年${age+10},我想说${fun()}`;
+        console.log(info)
+
+        function fun(){
+            return "这是个函数";
+        }
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+         const person={
+            name:"jack",
+            age:21,
+            language:['java','js','css']
+        }
+
+    console.log(Object.keys(person))//['name', 'age', 'language']
+    console.log(Object.values(person))//['jack', 21, Array(3)]
+    console.log(Object.entries(person))//[Array(2), Array(2), Array(2)]
+
+    
+
+
+    
+    const target={a:1}
+    const source1={b:2}
+    const source2={c:3}
+    Object.assign(target,source1,source2)
+    console.log(target)//{a: 1, b: 2, c: 3}
+
+
+
+
+
+    const name="tony";
+    const age=23;
+    // 传统
+    const person1={age:age,name:name}
+    console.log(person1)
+    //简写，变量名一样的话
+    const person2={age,name}
+    console.log(person2)
+
+
+
+
+
+    let person3={
+            name:"jack",
+            eat: function(food){
+                console.log((this.name)+"在吃"+food);
+            },
+            // this不能使用
+            eat2: food=>console.log((this.name)+"在吃"+food),
+            eat3: food=>console.log((person3.name)+"在吃"+food),
+            eat4(food){
+                console.log((this.name)+"在吃"+food);
+            }
+        }
+    person3.eat("banana")//jack在吃banana
+    person3.eat2("banana")//在吃banana
+    person3.eat3("banana")//jack在吃banana
+    person3.eat4("banana")//jack在吃banana
+
+
+    let person4={name:"Amt",age:15};
+    let person5={...person4}
+    // 深拷贝
+    console.log(person5)
+
+    // 合并 相同key值会覆盖
+    let age2={age:55};
+    let name2={name:"da"};
+    let person6={name:"dsada"}
+    person6={...age2,...name2};
+    console.log(person6)
+
+
+
+
+
+    
+
+
+
+
+
+
+
+
+
+    </script>
+</body>
+</html>
